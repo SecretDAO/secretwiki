@@ -54,7 +54,7 @@ module.exports = {
         ],
       },
       {
-        title: 'Projects Using Vue.js',
+        title: 'Node Tutorials',
         collapsable: false,
         children: [
           '/projects-using-vue-js/open-source',
@@ -66,7 +66,7 @@ module.exports = {
         ],
       },
       {
-        title: 'Components and Libraries',
+        title: 'Linux Tutorials',
         collapsable: false,
         children: [
           '/components-and-libraries/ui-components',
