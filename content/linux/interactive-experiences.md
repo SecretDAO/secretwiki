@@ -7,7 +7,7 @@ meta:
   - name: og:type
     content: website
   - name: og:url
-    content: https://awesome-vue.js.org/projects-using-vue-js/interactive-experiences.html
+    content: https://awesome-vue.js.org/linux/interactive-experiences.html
   - name: og:image
     content: https://awesome-vue.js.org/hero.png
   - name: og:description

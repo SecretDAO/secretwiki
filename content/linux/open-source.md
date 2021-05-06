@@ -7,7 +7,7 @@ meta:
   - name: og:type
     content: website
   - name: og:url
-    content: https://awesome-vue.js.org/projects-using-vue-js/open-source.html
+    content: https://awesome-vue.js.org/linux/open-source.html
   - name: og:image
     content: https://awesome-vue.js.org/hero.png
   - name: og:description

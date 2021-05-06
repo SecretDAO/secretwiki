@@ -57,12 +57,12 @@ module.exports = {
         title: 'Node Tutorials',
         collapsable: false,
         children: [
-          '/projects-using-vue-js/open-source',
-          '/projects-using-vue-js/commercial-products',
-          '/projects-using-vue-js/apps-websites',
-          '/projects-using-vue-js/interactive-experiences',
-          '/projects-using-vue-js/enterprise-usage',
-          '/projects-using-vue-js/a11y',
+          '/linux/open-source',
+          '/linux/commercial-products',
+          '/linux/apps-websites',
+          '/linux/interactive-experiences',
+          '/linux/enterprise-usage',
+          '/linux/a11y',
         ],
       },
       {
