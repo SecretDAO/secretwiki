@@ -5,23 +5,23 @@ actionText: Get Started →
 actionLink: /resources/official-resources
 meta:
   - name: description
-    content: A curated list of awesome things related to Vue.js
+    content: A collection of tuorials and documentation for the Secret Network.
   - name: og:title
-    content: Awesome Vue.js
+    content: Secret Network Wiki
   - name: og:type
     content: website
   - name: og:url
-    content: https://awesome-vue.js.org
+    content: https://secretnetwork.wiki
   - name: og:image
-    content: https://awesome-vue.js.org/hero.png
+    content: https://secretnetwork.wiki/hero.png
   - name: og:description
-    content: A curated list of awesome things related to Vue.js
+    content: A collection of tuorials and documentation for the Secret Network.
   - name: twitter:card
     content: summary
   - name: twitter:title
-    content: Awesome Vue.js
+    content: SecretNetwork Wiki
   - name: twitter:description
-    content: A curated list of awesome things related to Vue.js
+    content: A collection of tuorials and documentation for the Secret Network.
   - name: twitter:image:src
-    content: https://awesome-vue.js.org/hero.png
+    content: https://secretnetwork.wiki/hero.png
 ---
