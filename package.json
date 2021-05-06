@@ -1,87 +1,72 @@
 {
   "private": true,
+  "description": "Minimalistic doc generator with Vue component based layout system",
   "workspaces": [
-    "packages/*"
+    "packages/@vuepress/*",
+    "packages/vuepress",
+    "packages/docs"
   ],
+  "scripts": {
+    "boot": "node scripts/bootstrap.js",
+    "build": "yarn tsc && yarn build:docs",
+    "build:docs": "yarn workspace docs build",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 2",
+    "clean": "lerna clean && rm -rf node_modules",
+    "dev": "yarn tsc && yarn dev:docs",
+    "dev:docs": "yarn workspace docs dev",
+    "lint": "eslint packages --ext .js,.ts,.vue",
+    "packages:changed": "lerna changed",
+    "packages:diff": "lerna diff",
+    "packages:list": "lerna ls -l",
+    "register-vuepress": "lerna exec --scope vuepress -- yarn link",
+    "release": "yarn lint && yarn build && yarn test && node scripts/release.js",
+    "remote-version": "node scripts/remote-version.js",
+    "show-help": "yarn workspace docs show-help",
+    "test": "node scripts/test.js",
+    "tsc": "yarn workspace @vuepress/shared-utils tsc",
+    "unregister-vuepress": "lerna exec --scope vuepress -- yarn unlink",
+    "update-core-team": "all-contributors generate",
+    "view-info": "yarn tsc && yarn workspace docs view-info"
+  },
   "husky": {
     "hooks": {
-      "prepare-commit-msg": "node scripts/prepare-commit-message.js",
-      "commit-msg": "node scripts/lint-commit-message.js",
-      "pre-commit": "node scripts/warn-npm-install.js && yarn run lint --since HEAD && yarn lerna run test --since HEAD"
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
-  "scripts": {
-    "dev": "node scripts/dev.js",
-    "build": "node scripts/build.js",
-    "start": "lerna run start --scope vuetifyjs.com --stream",
-    "lint": "lerna run lint --parallel --stream",
-    "lint:fix": "lerna run lint:fix --parallel",
-    "version": "node scripts/confirm-npm-tag.js",
-    "prepare": "node scripts/post-install.js",
-    "postversion": "node scripts/post-release-merge.js",
-    "clean": "lerna clean"
-  },
-  "engines": {
-    "node": "^12 || ^14",
-    "yarn": "^1.12"
+  "lint-staged": {
+    "*.{js,ts,vue}": [
+      "eslint --fix",
+      "git add"
+    ],
+    "package.json": [
+      "sort-package-json",
+      "git add"
+    ]
   },
   "devDependencies": {
-    "@babel/cli": "^7.5.5",
-    "@babel/core": "^7.5.5",
-    "@babel/helper-create-regexp-features-plugin": "^7.8.8",
-    "@babel/plugin-proposal-nullish-coalescing-operator": "^7.4.4",
-    "@babel/plugin-proposal-object-rest-spread": "^7.5.5",
-    "@babel/plugin-proposal-optional-chaining": "^7.6.0",
-    "@babel/preset-env": "^7.5.5",
-    "@babel/preset-typescript": "^7.12.1",
-    "@mdi/js": "^5.2.45",
-    "@octokit/core": "^3.1.2",
-    "@typescript-eslint/eslint-plugin": "^4.5.0",
-    "@typescript-eslint/parser": "^4.5.0",
-    "babel-eslint": "^10.1.0",
-    "babel-jest": "^26.6.0",
-    "conventional-changelog-cli": "^2.1.1",
-    "cross-env": "^7.0.2",
-    "cross-spawn": "^6.0.5",
-    "css-loader": "^3.1.0",
-    "eslint": "^7.11.0",
-    "eslint-config-standard": "^14.1.1",
-    "eslint-loader": "^4.0.2",
-    "eslint-plugin-import": "^2.22.1",
-    "eslint-plugin-local-rules": "^0.1.1",
-    "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-promise": "^4.2.1",
-    "eslint-plugin-sonarjs": "^0.5.0",
-    "eslint-plugin-standard": "^4.0.1",
-    "eslint-plugin-vue": "^7.1.0",
-    "eslint-plugin-vuetify": "^1.0.0-beta.6",
-    "husky": "^3.0.1",
-    "inquirer": "^6.5.0",
-    "jest": "^26.6.0",
-    "jest-cli": "^26.6.0",
-    "jest-css-modules": "^2.1.0",
-    "jest-environment-jsdom-fourteen": "^1.0.1",
-    "jest-serializer-html": "^7.0.0",
-    "lerna": "^3.16.2",
-    "moment": "^2.27.0",
-    "sass": "^1.26.11",
-    "semver": "^6.2.0",
-    "shelljs": "^0.8.4",
-    "stylus": "^0.54.5",
-    "stylus-loader": "^3.0.1",
-    "typescript": "^4.0.3",
-    "vue": "^2.6.11",
-    "vue-analytics": "^5.16.1",
-    "vue-loader": "^15.7.1",
-    "vue-meta": "^2.4.0",
-    "vue-router": "^3.0.1",
-    "vue-template-compiler": "^2.6.11",
-    "vuex": "^3.0.1",
-    "webpack": "^4.39.1",
-    "webpack-cli": "^3.3.6",
-    "webpack-merge": "^4.2.1"
-  },
-  "resolutions": {
-    "workbox-webpack-plugin": "^5.1.3"
+    "@commitlint/cli": "^8.2.0",
+    "@commitlint/config-conventional": "^8.2.0",
+    "@types/escape-html": "^0.0.20",
+    "@types/fs-extra": "^5.0.4",
+    "@types/globby": "^9.1.0",
+    "@types/hash-sum": "^1.0.0",
+    "@types/lru-cache": "^5.1.0",
+    "@types/node": "^12.7.5",
+    "@types/semver": "^6.0.0",
+    "@typescript-eslint/eslint-plugin": "^2.9.0",
+    "@typescript-eslint/parser": "^2.9.0",
+    "all-contributors-cli": "^6.9.1",
+    "conventional-changelog-cli": "^2.0.23",
+    "eslint": "^6.7.1",
+    "eslint-plugin-jest": "^23.0.5",
+    "eslint-plugin-vue-libs": "^4.0.0",
+    "husky": "^3.0.5",
+    "inquirer": "^7.0.0",
+    "lerna": "3.16.4",
+    "lint-staged": "^9.3.0",
+    "minimist": "^1.2.0",
+    "sort-package-json": "^1.24.0",
+    "typescript": "^3.6.3"
   }
 }

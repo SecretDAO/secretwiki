@@ -1,18 +1,15 @@
 {
-  "command": {
-    "publish": {
-      "allowBranch": [
-        "master",
-        "dev",
-        "next"
-      ],
-      "message": "chore(release): publish %s"
-    },
-    "version": {
-      "push": true
-    }
-  },
   "npmClient": "yarn",
-  "version": "2.4.11",
-  "useWorkspaces": true
+  "useWorkspaces": true,
+  "version": "1.8.2",
+  "command": {
+    "version": {
+      "allowBranch": "master",
+      "exact": true,
+      "ignoreChanges": [
+        "**/*.md"
+      ],
+      "message": "build: release version %v"
+    }
+  }
 }
