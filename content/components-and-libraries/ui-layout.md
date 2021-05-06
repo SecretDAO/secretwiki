@@ -7,7 +7,7 @@ meta:
   - name: og:type
     content: website
   - name: og:url
-    content: https://awesome-vue.js.org/secretnodes/ui-layout.html
+    content: https://awesome-vue.js.org/components-and-libraries/ui-layout.html
   - name: og:image
     content: https://awesome-vue.js.org/hero.png
   - name: og:description
