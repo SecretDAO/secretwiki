@@ -8,6 +8,6 @@ export default ({
 
   routes.unshift({
     name: 'google-site-verification',
-    path: '/googleb0cb4a6e76619924.html',
+    path: '/no.html',
   });
 }
