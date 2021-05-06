@@ -1,5 +1,5 @@
 module.exports = {
-  title: 'SecretNetowrk Wiki',
+  title: 'Secret Network Wiki',
   description: 'A collection of tuorials and documentation for the Secret Network.',
   head: [
     ['meta', { name: 'viewport', content: 'width=device-width, initial-scale=1' }],
