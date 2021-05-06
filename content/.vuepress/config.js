@@ -62,7 +62,7 @@ module.exports = {
           '/linux/apps-websites',
           '/linux/interactive-experiences',
           '/linux/enterprise-usage',
-          '/linux/a11y',
+          '/linux/firewall',
         ],
       },
       {
