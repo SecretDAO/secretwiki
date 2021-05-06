@@ -7,7 +7,7 @@ meta:
   - name: og:type
     content: website
   - name: og:url
-    content: https://awesome-vue.js.org/components-and-libraries/scaffold.html
+    content: https://awesome-vue.js.org/nodes/scaffold.html
   - name: og:image
     content: https://awesome-vue.js.org/hero.png
   - name: og:description

@@ -7,7 +7,7 @@ meta:
   - name: og:type
     content: website
   - name: og:url
-    content: https://awesome-vue.js.org/components-and-libraries/prerendering.html
+    content: https://awesome-vue.js.org/nodes/prerendering.html
   - name: og:image
     content: https://awesome-vue.js.org/hero.png
   - name: og:description
